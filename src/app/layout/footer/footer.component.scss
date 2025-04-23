@@ -1,0 +1,10 @@
+@use '../../../styles';
+@use '../../../styles/mixins' as mixins;
+@use '../../../styles/variables' as vars;
+
+.footer {
+	@include mixins.flex-center-column;
+	text-align: center;
+	font-family: vars.$font-family;
+	color: var(--text-color);
+}

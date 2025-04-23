@@ -1,0 +1,30 @@
+@use '../../../../styles/variables' as vars;
+
+.dashboard-title {
+  font-size: 5vh;
+  text-align: center;
+  margin-top: 5vh;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1vw;
+  margin-top: 5vh;
+}
+
+.dashboard-card {
+  text-align: center;
+  padding: 1vw;
+  border-radius: vars.$border-radius;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+
+  h3 {
+    font-size: 3vh;
+  }
+
+  &:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+  }
+}

@@ -1,0 +1,35 @@
+<div class="map-container">
+  <google-map
+    height="60vh"
+    width="100%"
+    [center]="center"
+    [zoom]="zoom"
+    (mapClick)="onMapClick($event)">
+    <map-marker
+      [position]="markerPosition"
+      [options]="markerOptions">
+    </map-marker>
+  </google-map>
+</div>
+
+<div class="weather-container">
+  <!-- Aktuelles Wetteranzeige -->
+  <div *ngIf="weather">
+    <h3>Weather in {{ weather.location.name }}</h3>
+    <p>Temperature: {{ weather.current.temp_c }}°C</p>
+    <p>Weather: {{ weather.current.condition.text }}</p>
+    <img [src]="'https:' + weather.current.condition.icon" alt="Wetter-Icon">
+  </div>
+
+  <!-- Wettervorhersageanzeige -->
+  <h3>Weatherforecast (click on the map)</h3>
+  <div *ngIf="forecast" class="forecast-container">
+    <div *ngFor="let day of forecast.slice(1)" class="forecast-subcontainer">
+      <h4>{{ getWeekday(day.date) }}</h4>
+      <p>Min. Temperature: {{ day.day.mintemp_c }}°C</p>
+      <p>Max. Temperature: {{ day.day.maxtemp_c }}°C</p>
+      <p>{{ day.day.condition.text }}</p>
+      <img [src]="'https:' + day.day.condition.icon" alt="Wetter-Icon">
+    </div>
+  </div>
+</div>

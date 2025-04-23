@@ -1,0 +1,41 @@
+@use '../../../styles';
+@use '../../../styles/mixins' as mixins;
+@use '../../../styles/variables' as vars;
+
+.map-container {
+  margin: 2vh;
+}
+
+.weather-container {
+  @include mixins.flex-center-column;
+  padding: 3vh;
+
+  .forecast-container {
+    @include mixins.flex-center-row;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 1vh;
+  }
+}
+
+
+
+h3 {
+  font-size: 3vh;
+  font-weight: bold;
+}
+
+h4 {
+  font-size: 2.5vh;
+  margin-top: 1vh;
+}
+
+p {
+  font-size: 2vh;
+}
+
+img {
+  width: 5vw;
+  height: 7.5vh;
+  vertical-align: middle;
+}

@@ -1,0 +1,28 @@
+@use '../../../styles';
+@use '../../../styles/mixins' as mixins;
+@use '../../../styles/variables' as vars;
+
+.home {
+  @include mixins.flex-center-column;
+  justify-content: center;
+  height: 75vh;
+
+  h1 {
+    font-size: 5vh;
+    margin-bottom: 2vh;
+  }
+
+  .btn {
+    display: inline-block;
+    margin-top: 1vh;
+    padding: 1.5vh 1.5vw;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    text-decoration: none;
+    border-radius: vars.$border-radius;
+
+    &:hover {
+      background-color: var(--button-hover-color);
+    }
+  }
+}

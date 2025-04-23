@@ -1,0 +1,13 @@
+@use 'sass:map';
+@use './styles/_variables' as vars;
+@use './styles/_dark-theme';
+@use './styles/_light-theme';
+
+// Weitere globale Styles und Imports
+body {
+	font-family: vars.$font-family;
+	background-color: var(--bg-color);
+	color: var(--text-color);
+	margin: 0;
+	padding: 0;
+}

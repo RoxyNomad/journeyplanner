@@ -1,0 +1,21 @@
+@use '../../../styles';
+@use '../../../styles/mixins' as mixins;
+@use '../../../styles/variables' as vars;
+
+.navbar {
+	@include mixins.flex-center-row;
+	gap: 2vw;
+	margin-top: 2vh;
+
+	.button {
+		font-family: vars.$font-family;
+		background-color: var(--button-bg);
+    color: var(--button-text);
+		font-size: 2vh;
+		border-radius: vars.$border-radius;
+
+		&:hover {
+      background-color: var(--button-hover-color);
+    }
+	}
+}

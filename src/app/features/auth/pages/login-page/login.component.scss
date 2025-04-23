@@ -1,0 +1,79 @@
+@use '../../../../../styles/variables' as vars;
+@use '../../../../../styles';
+
+.login-card {
+  max-width: 20vw;
+  margin: 14vh auto;
+  padding: 2vh 2vw;
+  display: flex;
+  flex-direction: column;
+  gap: 2vh;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+  border-radius: vars.$border-radius;
+
+  h2 {
+    text-align: center;
+    margin-bottom: 2vh;
+  }
+
+  .form-group {
+    margin-bottom: 2vh;
+    display: flex;
+    flex-direction: column;
+
+    input {
+      background-color: var(--button-bg);
+      font-size: 2vh;
+      border-radius: vars.$border-radius;
+      padding: 0.25vh 1vw;
+    }
+  }
+  
+  .password-group {
+    position: relative;
+  }
+  
+  .toggle-password {
+    position: absolute;
+    right: 0;
+    top: 40%;
+    background: none;
+    border: none;
+    font-size: 2vh;
+    cursor: pointer;
+  }
+
+  .form-footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2vh;
+
+    .login-button {
+      background-color: var(--button-bg);
+      color: var(--button-text);
+      font-size: 2vh;
+      padding: 0.25vh 1vw;
+      border-radius: vars.$border-radius;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+  
+      &:hover {
+        background-color: var(--button-hover-color);
+        color: var(--button-text);
+      }
+    }
+
+    .register-link, a {
+      color: var(--text-color);
+      text-decoration: none;
+      font-size: 2vh;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
