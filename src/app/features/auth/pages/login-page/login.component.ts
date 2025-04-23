@@ -3,8 +3,6 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
 import { RouterModule, Router } from '@angular/router';
 
-import { AuthService } from '../../../../core/services/auth.services';
-
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -29,7 +27,6 @@ export class LoginComponent {
 
   constructor(
     private fb: FormBuilder,
-    private authService: AuthService,
     private router: Router
   ) {
     this.loginForm = this.fb.group({
@@ -41,12 +38,12 @@ export class LoginComponent {
   onSubmit(): void {
     if (this.loginForm.valid) {
       const { email, password } = this.loginForm.value;
-      this.authService.login({ email, password }).subscribe({
-        next: () => {
+      ({
+        next: (): void => {
           console.log('Erfolgreich eingeloggt');
           this.router.navigate(['/dashboard']); // oder wohin du nach Login willst
         },
-        error: (err) => {
+        error: (err: unknown): void => {
           console.error('Login fehlgeschlagen', err);
         }
       });
