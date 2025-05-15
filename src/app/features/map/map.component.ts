@@ -15,7 +15,7 @@ export class MapComponent {
   forecast: any;
 
   zoom = 6;
-  center: google.maps.LatLngLiteral = { lat: 48.1351, lng: 11.5820 }; // Startkoordinaten (München)
+  center: google.maps.LatLngLiteral = { lat: 47.518458, lng: 7.68906 }; // Startkoordinaten (Pratteln)
   markerPosition: google.maps.LatLngLiteral = this.center;
   markerOptions: google.maps.MarkerOptions = { draggable: false };
 
@@ -48,7 +48,7 @@ export class MapComponent {
           this.forecast = data.forecast.forecastday;  // Setze die Vorhersagedaten
           console.log(this.forecast);  // Optional: Ausgabe der Vorhersagedaten in der Konsole
         });
-        
+
     }
   }
 }
